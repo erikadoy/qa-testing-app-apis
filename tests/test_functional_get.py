@@ -10,3 +10,25 @@ def test_can_get_all_projects():
 def test_can_get_all_teams():
     response = requests.get(f"{ENDPOINT}/api/v1/teams")
     assert response.status_code == 200
+
+def test_can_get_stats():
+    response = requests.get(f"{ENDPOINT}/api/v1/stats")
+    assert response.status_code == 200
+
+def test_can_get_project_by_name():
+    response = requests.get(f"{ENDPOINT}/api/v1/projects")
+    data = response.json()
+
+    first_project = data["projects"][0]["project_name"]
+
+    response = requests.get(f"{ENDPOINT}/api/v1/projects/{first_project}")
+    assert response.status_code == 200
+
+def test_can_get_teams_projects():
+    response = requests.get(f"{ENDPOINT}/api/v1/teams")
+    data = response.json()
+
+    team_name = data["teams"][0]["team_name"]
+
+    response = requests.get(f"{ENDPOINT}/api/v1/teams/{team_name}/projects")
+    assert response.status_code == 200
