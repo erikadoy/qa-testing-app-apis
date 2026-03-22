@@ -1,9 +1,9 @@
 import pytest
 import requests 
 
-ENDPOINT = "https://bookish-waffle-9vp65q79g7jh955v-8000.app.github.dev"
+ENDPOINT = "http://127.0.0.1:8000"
 
 def test_can_call_endpoint():
-    response = requests.get(ENDPOINT)
+    response = requests.get(f"{ENDPOINT}/docs")
     assert response.status_code == 200
 
