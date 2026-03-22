@@ -32,3 +32,12 @@ def test_can_get_teams_projects():
 
     response = requests.get(f"{ENDPOINT}/api/v1/teams/{team_name}/projects")
     assert response.status_code == 200
+
+def test_can_get_template_type():
+    response = requests.get(f"{ENDPOINT}/api/v1/projects")
+    data = response.json()
+
+    template_type = data["projects"][0]["templates"][0]
+    
+    response = requests.get(f"{ENDPOINT}/api/v1/templates/{template_type}/projects")
+    assert response.status_code == 200
