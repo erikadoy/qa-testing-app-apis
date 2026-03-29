@@ -26,3 +26,6 @@ def test_can_update_project():
     assert get_response.status_code == 200
     data = get_response.json()
     assert data["team_name"] == updates["team_name"]
+
+    print("Update response status code:", update_response.status_code)
+    print("Update response JSON:", update_response.json())

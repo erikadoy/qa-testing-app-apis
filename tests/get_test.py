@@ -6,14 +6,17 @@ ENDPOINT = "http://127.0.0.1:8000"
 def test_can_get_all_projects():
     response = requests.get(f"{ENDPOINT}/api/v1/projects")
     assert response.status_code == 200
+    print("Response status code:", response.status_code)
 
 def test_can_get_all_teams():
     response = requests.get(f"{ENDPOINT}/api/v1/teams")
     assert response.status_code == 200
+    print("Response status code:", response.status_code)
 
 def test_can_get_stats():
     response = requests.get(f"{ENDPOINT}/api/v1/stats")
     assert response.status_code == 200
+    print("Response status code:", response.status_code)
 
 def test_can_get_project_by_name():
     response = requests.get(f"{ENDPOINT}/api/v1/projects")
@@ -23,6 +26,7 @@ def test_can_get_project_by_name():
 
     response = requests.get(f"{ENDPOINT}/api/v1/projects/{first_project}")
     assert response.status_code == 200
+    print("Response status code:", response.status_code)
 
 def test_can_get_teams_projects():
     response = requests.get(f"{ENDPOINT}/api/v1/teams")
@@ -32,6 +36,7 @@ def test_can_get_teams_projects():
 
     response = requests.get(f"{ENDPOINT}/api/v1/teams/{team_name}/projects")
     assert response.status_code == 200
+    print("Response status code:", response.status_code)
 
 def test_can_get_template_type():
     response = requests.get(f"{ENDPOINT}/api/v1/projects")
@@ -41,3 +46,4 @@ def test_can_get_template_type():
     
     response = requests.get(f"{ENDPOINT}/api/v1/templates/{template_type}/projects")
     assert response.status_code == 200
+    print("Response status code:", response.status_code)

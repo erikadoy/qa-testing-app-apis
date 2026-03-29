@@ -36,3 +36,6 @@ def test_can_delete_project():
     # Confirm it is gone
     get_project_response = get_project(project_name)
     assert get_project_response.status_code == 404
+
+    print("Delete response status code:", delete_project_response.status_code)
+    print("Get after delete response status code:", get_project_response.status_code)

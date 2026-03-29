@@ -26,4 +26,5 @@ def test_create_project():
     assert data["templates"] == ["frontend-react"]
     assert "project_id" in data
 
-    print("Calling:", f"{ENDPOINT}/api/v1/projects")
+    print("Response status code:", response.status_code)
+    print("Response JSON:", response.json())
