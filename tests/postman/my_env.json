@@ -1,0 +1,16 @@
+{
+	"id": "a5cc121a-a095-499e-862e-154ac8ded82b",
+	"name": "New Environment",
+	"values": [
+		{
+			"key": "project_id",
+			"value": "",
+			"type": "default",
+			"enabled": true
+		}
+	],
+	"color": 60,
+	"_postman_variable_scope": "environment",
+	"_postman_exported_at": "2026-03-29T14:32:32.094Z",
+	"_postman_exported_using": "Postman/12.3.7"
+}
